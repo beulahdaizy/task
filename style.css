@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+}
+.top-container {
+  min-height: 100vh;
+  background: url("Images/Main-image.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.text-box {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: white;
+  margin: 0 auto;
+  padding-left: 200px;
+  padding-top: 60px;
+  max-width: 1000px;
+}
+.inner-content {
+  font-size: 32px;
+}
+.black-box {
+  height: 100px;
+  padding: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  background: black;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+#big {
+  font-weight: bold;
+  font-size: 32px;
+}
+.work {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  gap: 20px;
+  margin-left: 250px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  padding: 20px;
+  height: 500px;
+  width: 500px;
+}
+.work-1 {
+  border: 2px solid blue;
+  border-radius: 20px;
+}
+.work-1:hover {
+  font-size: 20px;
+}
+.work-2 {
+  border: 2px solid blue;
+  border-radius: 20px;
+}
+.work-2:hover {
+  font-size: 20px;
+}
+.work-3 {
+  border: 2px solid blue;
+  border-radius: 20px;
+}
+.work-3:hover {
+  font-size: 20px;
+}
+.bottom-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+.contact {
+  height: 150px;
+  min-width: 500px;
+  padding: 20px;
+  background: rgba(50, 146, 53, 50);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
+.about {
+  height: 150px;
+  min-width: 500px;
+  padding: 20px;
+  background: chocolate;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
+.footer-text {
+  height: 60px;
+  padding: 20px;
+  background: black;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+}
