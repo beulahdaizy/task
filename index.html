@@ -3,53 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
-    ,<link rel="stylesheet" href="style.css">
-    <title>Developer | Landing page</title>
+    <meta name="Description" content="Note Taking" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Note Taking</title>
   </head>
+  <style>
+    .centre-box {
+      height: 250px;
+      width: 250px;
+      background-color: rgb(209, 232, 241);
+      position: relative;
+      top: 50px;
+      left: 50px;
+      border-radius: 5px;
+    }
+    i {
+      height: 100px;
+      width: 100px;
+      font-size: 8rem;
+      position: relative;
+      top: 60px;
+    }
+  </style>
   <body>
-    <section class="top-container">
-      <div class="text-box">
-        <h2 ><span class="inner-content">Hi</span>, I am John Doe</h2>
-        <h2><span class="inner-content">FULL STACK DEVELOPER</span></h2>
+    <div class="container-fluid vh-100 vw-100 bg-dark">
+      <div class="row">
+        <div class="col-12 centre-box text-center">
+          <i class="fa-regular fa-note-sticky" id="openNoteModal"></i>
+        </div>
       </div>
-    </section>
-    <section class="black-box">
-      <h1>Work, I can do for <span id="big">you</span>
-    </section>
-    <section class="work">
-      <div class="work-1">
-        <div><img src="./Images/Web-development.jpg" alt="web-development" height="250px" width="250px"></div>
-        <h3>Web Development</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea officiis dolore beatae distinctio ipsum quisquam. Neque, quos. Ducimus, voluptates molestiae?</p>
+    </div>
+    <div
+      class="modal fade"
+      id="addNoteModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="addNoteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addNoteModalLabel">Add a New Note</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="noteTitle">Title:</label>
+              <input type="text" class="form-control" id="noteTitle" />
+            </div>
+            <div class="form-group">
+              <label for="noteDescription">Description:</label>
+              <textarea
+                class="form-control"
+                id="noteDescription"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="addNoteButton">
+              Add Note
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="work-2">
-        <div><img src="./Images/App-development.jpg" alt="app-development" height="250px" width="250px"></div>
-        <h3>App development</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ut voluptatibus asperiores unde totam quod aperiam facere sunt iste aspernatur?</p>
-      </div>
-      <div class="work-3">
-        <div><img src="./Images/UI-UX-design.jpg" alt="ui-ux-design" height="250px" width="250px"></div>
-        <h3>UI UX Design</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere consectetur quos modi? Consequatur animi ad inventore illum unde rerum sunt.</p>
-      </div>
-    </section>
-    <section class="bottom-container">
-      <div class="contact">
-        <h3>Contact Me</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia reprehenderit doloremque!</p>
-        <br>
-        <p>dosomecoding@example.test</p>
-      </div>
-      <div class="about">
-        <h3>About Me</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, quidem?</p>
-        <br>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, perspiciatis.</p>
-      </div>
-    </section>
-    <footer class="footer-text"><p>Project by do some coding</p></footer>
+    </div>
+
+    <!-- Bootstrap and jQuery scripts (make sure you have these libraries included) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Your custom JavaScript -->
+    <script>
+      // JavaScript to open the modal on icon click
+      document
+        .getElementById("openNoteModal")
+        .addEventListener("click", function () {
+          $("#addNoteModal").modal("show");
+        });
+
+      // JavaScript to handle adding a new note
+      document
+        .getElementById("addNoteButton")
+        .addEventListener("click", function () {
+          // Get user input from the modal
+          var title = document.getElementById("noteTitle").value;
+          var description = document.getElementById("noteDescription").value;
+
+          // You can use this data to add the note to your application or perform other actions
+          // For this example, we'll simply display the data in the console
+          console.log("Title: " + title);
+          console.log("Description: " + description);
+
+          // Close the modal
+          $("#addNoteModal").modal("hide");
+        });
+
+      // Array to store notes
+      var notes = [];
+
+      // Function to add a new note
+      function addNote(title, description) {
+        var date = new Date().toLocaleDateString();
+        var newNote = {
+          title: title,
+          description: description,
+          date: date,
+        };
+        notes.push(newNote);
+        displayNotes();
+      }
+
+      // Function to display notes on the web page
+      function displayNotes() {
+        var notesContainer = document.getElementById("openNoteModal");
+        notesContainer.innerHTML = "";
+
+        notes.forEach(function (note, index) {
+          var noteElement = document.createElement("div");
+          noteElement.className = "note";
+
+          var titleElement = document.createElement("h4");
+          titleElement.innerText = note.title;
+
+          var descriptionElement = document.createElement("p");
+          descriptionElement.innerText = note.description;
+
+          var dateElement = document.createElement("small");
+          dateElement.innerText = "Date: " + note.date;
+
+          var actionsElement = document.createElement("div");
+          actionsElement.className = "note-actions";
+          actionsElement.innerHTML = `
+                    <button class="btn btn-primary" onclick="editNote(${index})">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteNote(${index})">Delete</button>
+                `;
+
+          noteElement.appendChild(titleElement);
+          noteElement.appendChild(descriptionElement);
+          noteElement.appendChild(dateElement);
+          noteElement.appendChild(actionsElement);
+
+          notesContainer.appendChild(noteElement);
+        });
+      }
+
+      // Function to edit a note
+      function editNote(index) {
+        // Implement the edit functionality here, similar to adding a note
+      }
+
+      // Function to delete a note
+      function deleteNote(index) {
+        notes.splice(index, 1);
+        displayNotes();
+      }
+
+      // Display existing notes (if any) when the page loads
+      displayNotes();
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>
